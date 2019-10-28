@@ -1,4 +1,5 @@
 <template>
+
     <div  class="center" >
 
       <nav class="side-nav">
@@ -75,9 +76,9 @@ main {
 
 
 
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .center{
-    max-width: 1400px;
+    max-width: 1600px;
    margin: 0px auto;
   }
 }
