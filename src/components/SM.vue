@@ -1,33 +1,28 @@
 <template>
+  <div class="center">
+    <nav class="side-nav">
+      <Side />
+    </nav>
 
-    <div  class="center" >
-
-      <nav class="side-nav">
-        <Side/>
-      </nav>
-
-      <main>
-        <Main/>
-       
-      </main>
-
-    </div>
+    <main>
+      <Main />
+    </main>
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
-import Side from '@/components/Side.vue'
-import Main from '@/components/Main.vue'
-
+import Side from "@/components/Side.vue";
+import Main from "@/components/Main.vue";
 
 export default {
-  name: 'SM',
+  name: "SM",
   components: {
     Side,
     Main
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -36,53 +31,41 @@ export default {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 270px 1fr;
-  grid-template-areas: 
-  "side-nav side-nav"
-  "main main";
-  
-
+  grid-template-areas:
+    "side-nav side-nav"
+    "main main";
 }
 
-.side-nav{
+.side-nav {
   grid-area: side-nav;
   /* display: none; */
-
 }
 
-main{
+main {
   grid-area: main;
 }
 
 main {
   background-color: white;
-  color: black;  
+  color: black;
 }
 
 @media (min-width: 768px) {
- 
   .side-nav {
     display: block;
-   
   }
   .center {
-    
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: 
-  "side-nav main"
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "side-nav main";
   }
 }
-
-
 
 @media (min-width: 1600px) {
-  .center{
+  .center {
     max-width: 1600px;
-   margin: 0px auto;
+    margin: 0px auto;
   }
 }
-
-
-
 </style>

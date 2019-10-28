@@ -30,7 +30,16 @@ export default {
       name: "LUIS FLORES",
       job: "Software Engineer",
       skills: ["Front-end", "Back-end", "Video Game", "Computer Science"],
-      skillsAtt: ["FE", "BE", "VG", "CS"]
+      skillsAtt: ["M-1", "M-21", "M-26", "M-12"]
+    };
+  },
+  mounted() {
+    window.onresize = () => {
+      if (window.innerWidth > 768) {
+        this.skillsAtt = ["M-1", "M-21", "M-26", "M-12"];
+      } else {
+        this.skillsAtt = ["FE", "BE", "VG", "CS"];
+      }
     };
   }
 };
@@ -48,12 +57,13 @@ export default {
   .list-group-item {
     border: none;
     color: black;
-    padding: 1.2rem 1.25rem;
+    padding: 1rem 1.25rem;
   }
 
   .list-group-item.active {
     background-color: white;
     font-weight: bold;
+    font-size: 1.3rem;
   }
 }
 
@@ -84,6 +94,13 @@ export default {
 
 #Job-Title {
   font-size: 0.9rem;
+}
+@media screen and (min-width: 420px) {
+  #tabs .list-group-item {
+    border: none;
+    color: black;
+    padding: 1.2rem 1.25rem;
+  }
 }
 @media screen and (min-height: 300px) and (min-width: 768px) {
   #Side {

@@ -16,7 +16,6 @@
     </div>
     <img class="main-imgs" id="M-8" src="../assets/jsLogo.jpeg" />
     <img class="main-imgs" id="M-27" src="../assets/MongoDB.jpg" />
-    <img class="main-imgs" id="M-11" src="../assets/AWS.png" />
     <img class="main-imgs" id="M-25" src="../assets/SoapvJson2.jpeg" />
     <img class="main-imgs" id="M-20" src="../assets/mevn.jpg" />
     <img class="main-imgs" id="M-26" src="../assets/PHPSQL2.jpg" />
@@ -26,6 +25,7 @@
     </div>
     <img class="main-imgs" id="M-12" src="../assets/Unity.jpg" />
     <img class="main-imgs" id="M-27" src="../assets/CharUnity.jpg" />
+    <img class="main-imgs" id="M-11" src="../assets/AWS.png" />
 
     <div id="CS">
       <p class="Main-text">{{CS}}</p>
@@ -104,10 +104,7 @@ export default {
 .main-imgs {
   width: 100%;
 }
-// .Main-text {
-//     margin: 40px 12%;
-//     text-align: center;
-// }
+
 .main-imgs {
   object-fit: cover;
   width: 100%;
