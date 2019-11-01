@@ -40,7 +40,7 @@
 
 <script>
 export default {
-  name: "Main",
+  name: "Gallery",
   data() {
     return {
       Frontend:

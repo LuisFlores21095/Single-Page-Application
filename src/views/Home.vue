@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Header/>
-    <SM/>
+    <LayoutSM/>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <Footer/>
   </div>
@@ -10,7 +10,7 @@
 <script>
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
-import SM from '@/components/SM.vue'
+import LayoutSM from '@/components/Layout-SM.vue'
 import Footer from '@/components/Footer.vue'
 
 
@@ -19,7 +19,7 @@ export default {
   name: 'home',
   components: {
     Header, 
-    SM,
+    LayoutSM,
     Footer
   }
 }

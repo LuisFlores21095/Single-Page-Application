@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: "Side",
+  name: "SideNav",
   data() {
     return {
       scrollPosition: null,
@@ -33,14 +33,21 @@ export default {
       skillsAtt: ["M-1", "M-21", "M-26", "M-12"]
     };
   },
-  mounted() {
-    window.onresize = () => {
+  created() {
+    window.addEventListener("resize", this.handleResize);
+    this.handleResize();
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.handleResize);
+  },
+  methods: {
+    handleResize() {
       if (window.innerWidth > 768) {
         this.skillsAtt = ["M-1", "M-21", "M-26", "M-12"];
       } else {
         this.skillsAtt = ["FE", "BE", "VG", "CS"];
       }
-    };
+    }
   }
 };
 </script>
@@ -89,7 +96,7 @@ export default {
 
 #Job-title,
 #side-header {
-  margin: 0px 5px 0px 5px;
+  margin: 0;
 }
 
 #Job-Title {

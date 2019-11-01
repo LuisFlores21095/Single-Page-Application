@@ -1,11 +1,11 @@
 <template>
   <div class="center">
     <nav class="side-nav">
-      <Side />
+      <SideNav />
     </nav>
 
     <main>
-      <Main />
+      <Gallery />
     </main>
   </div>
 </template>
@@ -13,14 +13,14 @@
 <script>
 // @ is an alias to /src
 
-import Side from "@/components/Side.vue";
-import Main from "@/components/Main.vue";
+import SideNav from "@/components/SideNav.vue";
+import Gallery from "@/components/Gallery.vue";
 
 export default {
-  name: "SM",
+  name: "Layout-SM",
   components: {
-    Side,
-    Main
+    SideNav,
+    Gallery
   }
 };
 </script>
