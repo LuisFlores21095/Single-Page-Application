@@ -1,8 +1,9 @@
 <template>
-  <div id="app">
-  
+
+  <v-app>
     <router-view/>
-  </div>
+  </v-app>
+  
 </template>
 
 <style lang="scss">
@@ -11,21 +12,30 @@
 	font-family: spinnaker,'Varela Round', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  a{
+    color: white;
+  }
   
 }
-*{
-    margin: 0;
-    padding: 0;
-    border: 0;
+
+.v-application a{
+  color: white;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #000000;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+// *{
+//     margin: 0;
+//     padding: 0;
+//     border: 0;
+// }
+// #nav {
+//   padding: 30px;
+//   a {
+//     font-weight: bold;
+//     color: #000000;
+//     &.router-link-exact-active {
+//       color: #42b983;
+//     }
+//   }
+// }
+
 </style>

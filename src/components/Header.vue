@@ -77,7 +77,8 @@ header li a:hover {
   margin-left: auto;
   margin-right: auto;
   width: 93px;
-  padding-top: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 @media screen and (min-width: 290px) {

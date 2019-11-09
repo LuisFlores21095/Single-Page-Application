@@ -2,6 +2,18 @@
   <div class="news">
     <Header/>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+<v-btn
+      class="ma-2"
+      :loading="loading2"
+      :disabled="loading2"
+      color="success"
+      @click="loader = 'loading2'"
+    >
+      Custom Loader
+      <template v-slot:loader>
+        <span>Loading...</span>
+      </template>
+    </v-btn>
     <Footer/>
   </div>
 </template>
