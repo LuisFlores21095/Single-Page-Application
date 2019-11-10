@@ -24,9 +24,9 @@
         </v-btn>
       </v-card-title>
 
-      <v-card-text class="py-2 white--text text-center">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-      </v-card-text>
+      <!-- <v-card-text class="py-2 white--text text-center">
+        {{ new Date().getFullYear() }} &copy;
+      </v-card-text> -->
     </v-card>
   </v-footer>
 </template>

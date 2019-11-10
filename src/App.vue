@@ -16,11 +16,16 @@
   a{
     color: white;
   }
+  ul{padding-left: 0}
   
 }
 
-.v-application a{
+.v-application {a{
   color: white;
+  
+}
+
+
 }
 // *{
 //     margin: 0;

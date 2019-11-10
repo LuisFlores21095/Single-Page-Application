@@ -9,7 +9,7 @@
           <router-link to="/">Home</router-link>
         </li>
         <li>
-          <router-link to="/News">News</router-link>
+          <router-link to="/Store">Store</router-link>
         </li>
         <li>
           <router-link to="/Contact">Contact</router-link>
