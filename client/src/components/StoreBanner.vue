@@ -10,7 +10,7 @@
 
 #StoreBanner{
     height: 250px;
-    background-color: lightgray;
+    background-color: #f2f3f3;
     padding: 1rem 0;
 
     h3{
@@ -50,9 +50,6 @@
 </style>
 <script>
 export default {
-  name: "StoreBanner",
-  components: {
-   
-  }
+  name: "StoreBanner"
 };
 </script>

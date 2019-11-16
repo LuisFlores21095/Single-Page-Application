@@ -17,9 +17,6 @@
 </style>
 <script>
 export default {
-  name: "Store",
-  components: {
-   
-  }
+  name: "Store"
 };
 </script>
