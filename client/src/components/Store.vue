@@ -11,10 +11,22 @@
 #store{
     margin: 0 25px 25px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 10px;
 }
+@media (min-width: 700px) {
+  #store{ grid-template-columns: repeat(2, 1fr);}
 
+}
+@media (min-width: 1000px) {
+  #store{ grid-template-columns: repeat(3, 1fr);}
+
+}
+
+@media (min-width: 1400px) {
+  #store{ grid-template-columns: repeat(5, 1fr);}
+
+}
 @media (min-width: 1600px) {
   #store {
     max-width: 1600px;
@@ -39,6 +51,8 @@ export default {
       {title: "Jhon Wilson"},
       {title: "John Wayne"},
       {title: "Libery Valance"},
+      {title: "Poo Pee"},
+      {title: "Poo Pee"},
       {title: "Poo Pee"}
       ]
     }

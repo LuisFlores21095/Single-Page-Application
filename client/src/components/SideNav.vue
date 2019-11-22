@@ -3,9 +3,9 @@
     <div id="profile">
       <img id="myPhoto" alt="Luis Flores" src="../assets/person.png" />
       <h3 id="side-header">
-        <i>{{name}}</i>
+        <i>{{ name }}</i>
       </h3>
-      <h2 id="Job-Title">{{job}}</h2>
+      <h2 id="Job-Title">{{ job }}</h2>
     </div>
 
     <div id="tabs">
@@ -14,15 +14,14 @@
           v-for="(skill, index) in skills"
           :key="skill"
           :href="'#' + [[skillsAtt[index]]]"
-        >{{skill}}</b-list-group-item>
+          >{{ skill }}</b-list-group-item
+        >
       </b-list-group>
     </div>
   </div>
 </template>
 
-
 <script>
-
 export default {
   name: "SideNav",
   data() {

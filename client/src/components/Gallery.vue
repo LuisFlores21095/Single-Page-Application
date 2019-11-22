@@ -1,7 +1,7 @@
 <template>
   <div id="home-gallery">
     <div id="FE">
-      <p class="Main-text">{{Frontend}}</p>
+      <p class="Main-text">{{ Frontend }}</p>
     </div>
     <img class="main-imgs" id="M-1" src="../assets/IR.png" />
     <img class="main-imgs" id="M-2" src="../assets/APS.png" />
@@ -12,7 +12,7 @@
     <img class="main-imgs" id="M-29" src="../assets/VaBaS.png" />
 
     <div id="BE">
-      <p class="Main-text">{{Backend}}</p>
+      <p class="Main-text">{{ Backend }}</p>
     </div>
     <img class="main-imgs" id="M-8" src="../assets/jsLogo.jpeg" />
     <img class="main-imgs" id="M-27" src="../assets/MongoDB.jpg" />
@@ -21,14 +21,14 @@
     <img class="main-imgs" id="M-26" src="../assets/PHPSQL2.jpg" />
 
     <div id="VG">
-      <p class="Main-text">{{VG}}</p>
+      <p class="Main-text">{{ VG }}</p>
     </div>
     <img class="main-imgs" id="M-12" src="../assets/Unity.jpg" />
     <img class="main-imgs" id="M-27" src="../assets/CharUnity.jpg" />
     <img class="main-imgs" id="M-11" src="../assets/AWS.png" />
 
     <div id="CS">
-      <p class="Main-text">{{CS}}</p>
+      <p class="Main-text">{{ CS }}</p>
     </div>
     <img class="main-imgs" id="M-14" src="../assets/Treea.png" />
     <img class="main-imgs" id="M-15" src="../assets/CsharpL.jpg" />
