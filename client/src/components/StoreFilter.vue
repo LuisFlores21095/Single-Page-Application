@@ -25,6 +25,36 @@
           ></v-text-field>
         </v-col>
 
+        <v-col class="d-flex" cols="12" sm="4">
+        <v-select
+          :items="Category"
+          label="Category"
+          dense
+          solo
+        ></v-select>
+      </v-col>
+
+        <v-col class="d-flex" cols="12" sm="4">
+        <v-select
+          :items="Cover_Type"
+          label="Cover-Type"
+          dense
+          solo
+        ></v-select>
+      </v-col>
+
+        <v-col class="d-flex" cols="12" sm="4">
+        <v-select
+          :items="Price_Range"
+          label="Price-Range"
+          dense
+          solo
+        ></v-select>
+      </v-col>
+
+      <v-btn block color="primary" dark>Block Button</v-btn>
+
+
       </v-row>
     <!-- </v-container> -->
   </v-form>
@@ -53,6 +83,9 @@ export default {
         title: '',
         description: '',
         rules: [v => v.length <= 25 || 'Max 25 characters'],
+        Category: ['Mystery','Horror','Drama','Romance','Science Fiction'],
+        Cover_Type: ["Hard Cover", "PaperBack", "E-book"],
+        Price_Range: ["$0-$5", '$5-$15', '$15-$30','Above $30']
     };
   }}
 </script>

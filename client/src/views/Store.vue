@@ -25,7 +25,7 @@ export default {
     Footer,
     StoreBanner,
     Store,
-    StoreFilter
+    StoreFilter,
   }
 };
 </script>

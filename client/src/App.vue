@@ -17,6 +17,7 @@
     color: white;
   }
   ul{padding-left: 0}
+  p{margin: 0}
   
 }
 
