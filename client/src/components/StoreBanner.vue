@@ -42,12 +42,12 @@
   }
 }
 
-@media (min-width: 1600px) {
-  #StoreBanner {
-    max-width: 1600px;
-    margin: 0px auto;
-  }
-}
+// @media (min-width: 1600px) {
+//   #StoreBanner {
+//     max-width: 1600px;
+//     margin: 0px auto;
+//   }
+// }
 </style>
 <script>
 export default {

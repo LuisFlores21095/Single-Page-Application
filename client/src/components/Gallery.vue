@@ -84,7 +84,8 @@ export default {
 }
 
 #home-gallery {
-  background-color: #f5f5f5;
+background-color: #f5f5f5;
+
   display: grid;
   padding: 10px;
 
@@ -109,6 +110,8 @@ export default {
   object-fit: cover;
   width: 100%;
   height: 100%;
+    box-shadow: 0 0 4px 1px rgba(0,0,0,0.05);
+
 }
 
 @media screen and (min-width: 768px) {
@@ -159,6 +162,9 @@ export default {
     grid-template-columns: repeat(9, minmax(10px, 1fr));
     grid-template-rows: repeat(19, 10vw);
     grid-gap: 13px;
+    background-color: white;
+      box-shadow: 0 0 4px 1px rgba(0,0,0,0.05);
+
   }
 
   #M-1 {

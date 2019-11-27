@@ -1,5 +1,5 @@
 <template>
-  <div class="center">
+  <div id="center">
     <nav class="side-nav">
       <SideNav />
     </nav>
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-.center {
+#center {
   grid-area: center;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -39,6 +39,8 @@ export default {
 .side-nav {
   grid-area: side-nav;
   /* display: none; */
+  background-color: white;
+
 }
 
 main {
@@ -53,19 +55,25 @@ main {
 @media (min-width: 768px) {
   .side-nav {
     display: block;
+    box-shadow: 0 0 4px 1px rgba(0,0,0,0.05);
+
   }
-  .center {
+  #center {
     display: grid;
+    grid-gap: 15px;
+        margin: 8px 10px;
+
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr;
     grid-template-areas: "side-nav main";
   }
 }
 
-@media (min-width: 1600px) {
-  .center {
-    max-width: 1600px;
-    margin: 0px auto;
+@media (min-width: 1400px) {
+  #center {
+    grid-gap: 25px;
+    max-width: 1400px;
+    margin: 15px auto;
   }
 }
 </style>

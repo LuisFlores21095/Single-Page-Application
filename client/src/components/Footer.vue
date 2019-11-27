@@ -2,8 +2,8 @@
   <v-footer dark padless>
     <v-card class="flex" flat tile>
       <v-card-title class="secondary">
-        <strong class="subheading"
-          >Get connected with us on social networks!</strong
+        <div class="subheading"
+          >Get connected with us on social networks!</div
         >
 
         <v-spacer></v-spacer>

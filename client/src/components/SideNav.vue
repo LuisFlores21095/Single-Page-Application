@@ -3,7 +3,7 @@
     <div id="profile">
       <img id="myPhoto" alt="Luis Flores" src="../assets/person.png" />
       <h3 id="side-header">
-        <i>{{ name }}</i>
+        <i id="profile_name" >{{ name }}</i>
       </h3>
       <h2 id="Job-Title">{{ job }}</h2>
     </div>
@@ -53,6 +53,10 @@ export default {
 </script>
 
 <style lang="scss">
+#profile_name{
+  padding: 0 7px;
+}
+
 #tabs {
   float: right;
   width: 50%;

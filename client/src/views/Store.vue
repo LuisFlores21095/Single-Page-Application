@@ -6,6 +6,8 @@
     <StoreFilter/>
     <Store />
     <Footer />
+    <Login />
+
   </div>
 </template>
 
@@ -16,7 +18,7 @@ import Footer from "@/components/Footer.vue";
 import StoreBanner from "@/components/StoreBanner.vue";
 import Store from "@/components/Store.vue";
 import StoreFilter from "@/components/StoreFilter.vue";
-
+import Login from "@/components/Login.vue"
 
 export default {
   name: "store",
@@ -26,6 +28,7 @@ export default {
     StoreBanner,
     Store,
     StoreFilter,
+    Login
   }
 };
 </script>

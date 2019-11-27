@@ -17,9 +17,6 @@
         <v-col cols="12" sm="6">
           <v-text-field
             v-model="BookName"
-            :rules="rules"
-            counter
-            maxlength="25"
             label="Title of Book"
           ></v-text-field>
         </v-col>
@@ -65,19 +62,22 @@
 
 <style lang="scss">
 #StoreFilter {
-  margin: 30px 4px;
+  margin: 30px 25px;
   padding: 0 10px;
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1400px) {
   #StoreFilter {
-    max-width: 1600px;
+    max-width: 1400px;
     margin: 30px auto;
   }
 }
 </style>
 
 <script>
+import { mapMutations} from 'vuex'
+
+
 export default {
   name: "StoreFilter",
   data() {
@@ -100,13 +100,20 @@ export default {
       }
     };
   },
+  
   methods: {
+     ...mapMutations([
+        'ADD_FILTER_DATA'
+     ]),
+
     Update_filter() {
       this.Search.BookName = this.BookName;
       this.Search.Author = this.LastName;
       this.Search.Category = this.selected_category;
       this.Search.CoverType = this.selected_coverType;
       this.Search.PriceRange = this.selected_priceRange;
+
+      this.ADD_FILTER_DATA(this.Search);
     }
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div id="home">
     <Header/>
     <LayoutSM/>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
@@ -24,4 +24,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+#home{
+  background-color: #f7f7f7;
+}
+</style>>
 
