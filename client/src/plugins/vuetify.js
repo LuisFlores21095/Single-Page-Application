@@ -15,6 +15,7 @@ export default new Vuetify({
         light: {
           secondary: '#6e859c',
           primary: '#3f8abf',
+          vueGreen: '#41b883'
         }
       }
     }

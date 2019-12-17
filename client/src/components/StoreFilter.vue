@@ -11,6 +11,7 @@
             maxlength="25"
             hint="This field uses maxlength attribute"
             label="Arthur Last Name"
+            color="vueGreen"
           ></v-text-field>
         </v-col>
 
@@ -18,42 +19,48 @@
           <v-text-field
             v-model="BookName"
             label="Title of Book"
+            color="vueGreen"
           ></v-text-field>
         </v-col>
 
-        <v-col class="d-flex" cols="12" sm="4">
+        <v-col class="d-flex" cols="12" sm="4" md="3">
           <v-select
             v-model="selected_category"
             :items="Category"
             label="Category"
+            item-color="vueGreen"
             dense
             solo
           ></v-select>
         </v-col>
 
-        <v-col class="d-flex" cols="12" sm="4">
+        <v-col class="d-flex" cols="12" sm="4" md="3">
           <v-select
             v-model="selected_coverType"
             :items="Cover_Type"
             label="Cover-Type"
+            item-color="vueGreen"
             dense
             solo
           ></v-select>
         </v-col>
 
-        <v-col class="d-flex" cols="12" sm="4">
+        <v-col class="d-flex" cols="12" sm="4" md="3">
           <v-select
             v-model="selected_priceRange"
             :items="Price_Range"
             label="Price-Range"
+            item-color="vueGreen"
             dense
             solo
           ></v-select>
         </v-col>
 
-        <v-btn v-on:click.native="Update_filter" block color="primary" dark
-          >Submit</v-btn
-        >
+        <v-col class="d-flex" cols="12" sm="12" md="3">
+          <v-btn v-on:click.native="Update_filter" block color="vueGreen" dark
+            >Submit</v-btn
+          >
+        </v-col>
       </v-row>
       <!-- </v-container> -->
     </v-form>
@@ -75,8 +82,7 @@
 </style>
 
 <script>
-import { mapMutations} from 'vuex'
-
+import { mapMutations } from "vuex";
 
 export default {
   name: "StoreFilter",
@@ -100,11 +106,9 @@ export default {
       }
     };
   },
-  
+
   methods: {
-     ...mapMutations([
-        'ADD_FILTER_DATA'
-     ]),
+    ...mapMutations(["ADD_FILTER_DATA"]),
 
     Update_filter() {
       this.Search.BookName = this.BookName;
