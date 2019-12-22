@@ -83,7 +83,9 @@
                 <v-col cols="12">
                   <v-text-field
                     v-model="email"
+                    @input="onChange"
                     :rules="emailRules"
+                    :error="emailErrorDup"
                     label="E-mail"
                     required
                   ></v-text-field>
@@ -114,6 +116,27 @@
                     @click:append="show1 = !show1"
                   ></v-text-field>
                 </v-col>
+                <v-col cols="12">
+                  <v-alert
+                    dense
+                    outlined
+                    type="error"
+                    v-show="RegisterPopup === 1"
+                  >
+                    {{ RegisterPopupMessage }}
+                  </v-alert>
+                </v-col>
+
+                <v-col cols="12">
+                  <v-alert
+                    v-show="RegisterPopup === 2"
+                    dense
+                    text
+                    type="success"
+                  >
+                    {{ RegisterPopupMessage }}
+                  </v-alert>
+                </v-col>
 
                 <v-col class="d-flex" cols="12" sm="6" xsm="12">
                   <v-btn color="warning" @click="dialog = false"
@@ -133,6 +156,7 @@
                 <v-col class="d-flex" cols="12" sm="3" xsm="12">
                   <v-btn
                     block
+                    :loading="loadingRegister"
                     :disabled="!valid"
                     color="success"
                     class="mr-4"
@@ -208,23 +232,57 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   computed: {
     passwordMatch() {
       return () => this.password === this.cpassword || "Password must match";
     }
   },
+
   methods: {
+    onChange() {
+      this.emailErrorDup = false;
+    },
     selectTab(stuff) {
       this.selectedTab = stuff;
     },
+
     validate() {
-      if (this.$refs.loginForm.validate()) {
-        this.snackbar = true;
+      if (this.$refs.registerForm.validate()) {
+        this.loadingRegister = true;
+
+        axios
+          .post("http://localhost:3000/user", {
+            FirstName: this.firstName,
+            LastName: this.lastName,
+            StreetAddress: this.streetAddress,
+            City: this.city,
+            State: this.state,
+            ZipCode: this.zipCode,
+            Email: this.email,
+            Password: this.password
+          })
+          .then(response => {
+            this.reset();
+            this.RegisterPopupMessage = response.data.message;
+            this.RegisterPopup = 2;
+            this.loadingRegister = false;
+          })
+          .catch(error => {
+            this.RegisterPopup = 1;
+            if (error.response.data.error.errorCode === 11000) {
+              this.RegisterPopupMessage = error.response.data.message;
+              this.emailErrorDup = true;
+            } else {
+              this.RegisterPopupMessage = error.response.data.message;
+            }
+            this.loadingRegister = false;
+          });
       }
     },
     reset() {
-      this.$refs.form.reset();
+      this.$refs.registerForm.reset();
     },
     resetValidation() {
       this.$refs.form.resetValidation();
@@ -249,6 +307,10 @@ export default {
     cpassword: "",
     loginPassword: "",
     loginEmail: "",
+    RegisterPopup: 0,
+    loadingRegister: false,
+    RegisterPopupMessage: "",
+    emailErrorDup: false,
 
     loginEmailRules: [
       v => !!v || "Required",
