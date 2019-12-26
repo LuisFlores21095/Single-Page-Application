@@ -2,57 +2,58 @@ const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
 const bcrypt = require('bcrypt');
 
-const PostSchema = mongoose.Schema({
+const registerSchema = mongoose.Schema({
 
-     FirstName:{
+     firstName:{
          type: String,
          required: true
              },
 
-     LastName:{
+     lastName:{
         type: String,
         required: true
     },
-    StreetAddress:{
+    streetAddress:{
         type: String,
         required: true
     },
-    City:{
+    city:{
         type: String,
         required: true
     },
-    State:{
+    state:{
         type: String,
         required: true
     },
-    ZipCode:{
-        type: Number,
+    zipCode:{
+        type: String,
         required: true
     },
-    Email:{
+    email:{
         type: String,
         required: true,
         unique: true,
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
 
     },
-    Password: { type: String, required: true }
+    password: { type: String, required: true, minlength: [8, 'Username must be at least 8 characters.']
+}
    
 
 
 
 });
 
-PostSchema.pre('save', function(next){
+registerSchema.pre('save', function(next){
 const user = this;
-bcrypt.hash(user.Password, 10, function(err,hash){
+bcrypt.hash(user.password, 10, function(err,hash){
     if(err){
         return next(err);
     }
-    user.Password = hash;
-next();
+    user.password = hash;
+ return next();
 })
 
 });
 
-module.exports = mongoose.model('Posts', PostSchema);
+module.exports = mongoose.model('User', registerSchema);

@@ -160,7 +160,7 @@
                     :disabled="!valid"
                     color="success"
                     class="mr-4"
-                    @click="validate"
+                    @click="registervalidate"
                   >
                     Register
                   </v-btn>
@@ -196,6 +196,17 @@
                   ></v-text-field>
                 </v-col>
 
+                 <v-col cols="12">
+                  <v-alert
+                    dense
+                    outlined
+                    type="error"
+                    v-show="LoginPopup === 1"
+                  >
+                    {{ LoginPopupMessage }}
+                  </v-alert>
+                </v-col>
+
                 <v-col class="d-flex" cols="12" sm="6" xsm="12">
                   <v-btn block color="warning" @click="dialog = false"
                     >Continue as Guest</v-btn
@@ -214,12 +225,13 @@
                 <v-col class="d-flex" cols="12" sm="3" xsm="12">
                   <v-btn
                     block
+                    :loading="loadingLogin"
                     :disabled="!valid"
                     color="success"
                     class="mr-4"
-                    @click="validate"
+                    @click="loginvalidate"
                   >
-                    Register
+                    Login
                   </v-btn>
                 </v-col>
               </v-row>
@@ -247,24 +259,50 @@ export default {
     selectTab(stuff) {
       this.selectedTab = stuff;
     },
+    loginvalidate() {
+      if (this.$refs.loginForm.validate()) {
+        this.loadingLogin = true;
 
-    validate() {
+        axios
+          .post("http://localhost:3000/login", {
+            email: this.loginEmail,
+            password: this.loginPassword
+          })
+          .then(response => {
+            this.l_reset();
+            console.log(response);
+            this.dialog = false;
+            this.loadingLogin = false;
+
+
+          })
+          .catch(error => {
+            console.log(error.response.data.message);
+            this.LoginPopupMessage = error.response.data.message;
+            this.LoginPopup = 1;
+            this.loadingLogin = false;
+
+          });
+      }
+    },
+
+    registervalidate() {
       if (this.$refs.registerForm.validate()) {
         this.loadingRegister = true;
 
         axios
-          .post("http://localhost:3000/user", {
-            FirstName: this.firstName,
-            LastName: this.lastName,
-            StreetAddress: this.streetAddress,
-            City: this.city,
-            State: this.state,
-            ZipCode: this.zipCode,
-            Email: this.email,
-            Password: this.password
+          .post("http://localhost:3000/register", {
+            firstName: this.firstName,
+            lastName: this.lastName,
+            streetAddress: this.streetAddress,
+            city: this.city,
+            state: this.state,
+            zipCode: this.zipCode,
+            email: this.email,
+            password: this.password
           })
           .then(response => {
-            this.reset();
+            this.r_reset();
             this.RegisterPopupMessage = response.data.message;
             this.RegisterPopup = 2;
             this.loadingRegister = false;
@@ -281,12 +319,18 @@ export default {
           });
       }
     },
-    reset() {
+    r_reset() {
       this.$refs.registerForm.reset();
     },
-    resetValidation() {
-      this.$refs.form.resetValidation();
+    // r_resetValidation() {
+    //   this.$refs.form.resetValidation();
+    // },
+    l_reset() {
+      this.$refs.loginForm.reset();
     }
+    // l_resetValidation() {
+    //   this.$refs.form.resetValidation();
+    // },
   },
   data: () => ({
     selectedTab: 1,
@@ -308,8 +352,11 @@ export default {
     loginPassword: "",
     loginEmail: "",
     RegisterPopup: 0,
+    LoginPopup: 0,
     loadingRegister: false,
+    loadingLogin: false,
     RegisterPopupMessage: "",
+    LoginPopupMessage: "",
     emailErrorDup: false,
 
     loginEmailRules: [
