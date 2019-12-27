@@ -1,17 +1,15 @@
 <template>
-  <b-card id="StoreFilter" bg-variant="light">
+  <b-card id="StoreFilter" bg-variant="light" >
     <v-form>
       <!-- <v-container> -->
       <v-row>
         <v-col cols="12" sm="6">
           <v-text-field
             v-model="LastName"
-            :rules="rules"
-            counter
-            maxlength="25"
-            hint="This field uses maxlength attribute"
-            label="Arthur Last Name"
+            
+            label="Arthur Name"
             color="vueGreen"
+             dense
           ></v-text-field>
         </v-col>
 
@@ -20,6 +18,7 @@
             v-model="BookName"
             label="Title of Book"
             color="vueGreen"
+            dense
           ></v-text-field>
         </v-col>
 
@@ -28,9 +27,10 @@
             v-model="selected_category"
             :items="Category"
             label="Category"
-            item-color="vueGreen"
+            color="vueGreen"
+            
             dense
-            solo
+            clearable
           ></v-select>
         </v-col>
 
@@ -39,9 +39,10 @@
             v-model="selected_coverType"
             :items="Cover_Type"
             label="Cover-Type"
-            item-color="vueGreen"
+            color="vueGreen"
             dense
-            solo
+            
+            clearable
           ></v-select>
         </v-col>
 
@@ -50,15 +51,16 @@
             v-model="selected_priceRange"
             :items="Price_Range"
             label="Price-Range"
-            item-color="vueGreen"
+            color="vueGreen"
             dense
-            solo
+            
+            clearable
           ></v-select>
         </v-col>
 
         <v-col class="d-flex" cols="12" sm="12" md="3">
-          <v-btn v-on:click.native="Update_filter" block color="vueGreen" dark
-            >Submit</v-btn
+          <v-btn v-on:click.native="Update_filter" block color="success" outlined
+            >Search</v-btn
           >
         </v-col>
       </v-row>
@@ -93,7 +95,6 @@ export default {
       selected_category: "",
       selected_coverType: "",
       selected_priceRange: "",
-      rules: [v => v.length <= 25 || "Max 25 characters"],
       Category: ["Mystery", "Horror", "Drama", "Romance", "Science Fiction"],
       Cover_Type: ["Hard-Cover", "Paper-Back", "E-book"],
       Price_Range: ["$0-$5", "$5-$15", "$15-$30", "Above $30"],

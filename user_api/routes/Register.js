@@ -19,7 +19,7 @@ router.post("/", async (req, res, next) => {
     city: req.body.city,
     state: req.body.state,
     zipCode: req.body.zipCode,
-    email: req.body.email,
+    email: req.body.email.toLowerCase(),
     password: req.body.password
   });
 

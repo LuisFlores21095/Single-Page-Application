@@ -12,7 +12,7 @@ router.post("/", async (req, res, next) => {
   }
 
 
-  const user = await User.findOne({ email: req.body.email });
+  const user = await User.findOne({ email: req.body.email.toLowerCase() });
   if (!user) {
     err = new Error("Email not found");
     err.status = 400;
@@ -27,7 +27,7 @@ router.post("/", async (req, res, next) => {
   }
 
   const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-  res.header("auth-token", token).send(token);
+  res.header("auth-token", token).send({token: token});
 });
 
 module.exports = router;
