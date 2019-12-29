@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-module.exports = new Sequelize('books', 'root', '2597220Lf!', {
+module.exports = new Sequelize('books', 'root', process.env.DATABASE_PW, {
     host: 'localhost',
     dialect: 'mysql',
     operatoresAliases: false,

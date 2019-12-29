@@ -3,6 +3,8 @@ const mysql = require("mysql2");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
+require("dotenv").config();
+
 
 app.use(bodyParser.json());
 
@@ -19,7 +21,7 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "2597220Lf!",
+  password: process.env.DATABASE_PW,
   database: "books"
 });
 
