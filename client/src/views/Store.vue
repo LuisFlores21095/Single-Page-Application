@@ -1,5 +1,5 @@
 <template>
-  <div class="store">
+  <div id="storeView">
     <Header />
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <StoreBanner />
@@ -32,4 +32,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+#storeView{
+.card{
+  border: 1px solid rgba(32, 172, 69, 0.96);
+}
+}
+</style>
 

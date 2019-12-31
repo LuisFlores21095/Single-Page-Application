@@ -240,6 +240,56 @@ import { mapMutations } from "vuex";
 import { mapGetters } from "vuex";
 
 export default {
+  data: () => ({
+    selectedTab: 1,
+    dialog: true,
+    tab: null,
+    tabsName: ["Login", "Register"],
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    tabs: 2,
+    valid: true,
+    firstName: "",
+    lastName: "",
+    email: "",
+    zipCode: "",
+    city: "",
+    state: "",
+    streetAddress: "",
+    cpassword: "",
+    loginPassword: "",
+    loginEmail: "",
+    RegisterPopup: 0,
+    LoginPopup: 0,
+    loadingRegister: false,
+    loadingLogin: false,
+    RegisterPopupMessage: "",
+    LoginPopupMessage: "",
+    emailErrorDup: false,
+    snackbar: false,
+    snackbarText: "You have successfully logged in",
+    timeout: 3000,
+
+    loginEmailRules: [
+      v => !!v || "Required",
+      v => /.+@.+\..+/.test(v) || "E-mail must be valid"
+    ],
+    emailRules: [
+      v => !!v || "Required",
+      v => /.+@.+\..+/.test(v) || "E-mail must be valid"
+    ],
+    zipCodeRules: [
+      v => !!v || "Required",
+      v => /^\d+$/.test(v) || "Zipcode contains only digits"
+    ],
+
+    show1: false,
+    password: "",
+    rules: {
+      required: value => !!value || "Required.",
+      min: v => (v && v.length >= 8) || "Min 8 characters"
+    }
+  }),
   computed: {
     ...mapGetters(["tokenCheck"]),
 
@@ -328,57 +378,7 @@ export default {
     l_reset() {
       this.$refs.loginForm.reset();
     }
-  },
-  data: () => ({
-    selectedTab: 1,
-    dialog: true,
-    tab: null,
-    tabsName: ["Login", "Register"],
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    tabs: 2,
-    valid: true,
-    firstName: "",
-    lastName: "",
-    email: "",
-    zipCode: "",
-    city: "",
-    state: "",
-    streetAddress: "",
-    cpassword: "",
-    loginPassword: "",
-    loginEmail: "",
-    RegisterPopup: 0,
-    LoginPopup: 0,
-    loadingRegister: false,
-    loadingLogin: false,
-    RegisterPopupMessage: "",
-    LoginPopupMessage: "",
-    emailErrorDup: false,
-    snackbar: false,
-    snackbarText: "You have successfully logged in",
-    timeout: 3000,
-
-    loginEmailRules: [
-      v => !!v || "Required",
-      v => /.+@.+\..+/.test(v) || "E-mail must be valid"
-    ],
-    emailRules: [
-      v => !!v || "Required",
-      v => /.+@.+\..+/.test(v) || "E-mail must be valid"
-    ],
-    zipCodeRules: [
-      v => !!v || "Required",
-      v => /^\d+$/.test(v) || "Zipcode contains only digits"
-    ],
-
-    show1: false,
-    password: "",
-    rules: {
-      required: value => !!value || "Required.",
-      min: v => (v && v.length >= 8) || "Min 8 characters"
-    }
-  })
+  }
 };
 </script>
 

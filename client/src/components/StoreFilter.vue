@@ -1,15 +1,14 @@
 <template>
-  <b-card id="StoreFilter" bg-variant="light" >
+  <b-card id="StoreFilter" bg-variant="light">
     <v-form>
       <!-- <v-container> -->
       <v-row>
         <v-col cols="12" sm="6">
           <v-text-field
             v-model="LastName"
-            
             label="Arthur Name"
             color="vueGreen"
-             dense
+            dense
           ></v-text-field>
         </v-col>
 
@@ -28,7 +27,6 @@
             :items="Category"
             label="Category"
             color="vueGreen"
-            
             dense
             clearable
           ></v-select>
@@ -41,7 +39,6 @@
             label="Cover-Type"
             color="vueGreen"
             dense
-            
             clearable
           ></v-select>
         </v-col>
@@ -53,13 +50,16 @@
             label="Price-Range"
             color="vueGreen"
             dense
-            
             clearable
           ></v-select>
         </v-col>
 
         <v-col class="d-flex" cols="12" sm="12" md="3">
-          <v-btn v-on:click.native="Update_filter" block color="success" outlined
+          <v-btn
+            v-on:click.native="Update_filter"
+            block
+            color="success"
+            outlined
             >Search</v-btn
           >
         </v-col>
@@ -112,13 +112,27 @@ export default {
     ...mapMutations(["ADD_FILTER_DATA"]),
 
     Update_filter() {
-      this.Search.BookName = this.BookName;
-      this.Search.Author = this.LastName;
-      this.Search.Category = this.selected_category;
-      this.Search.CoverType = this.selected_coverType;
-      this.Search.PriceRange = this.selected_priceRange;
+      this.Search.bookName = this.BookName;
+      this.Search.authorName = this.LastName;
+      this.Search.category = this.selected_category;
+      this.Search.coverType = this.selected_coverType;
+      this.Search.price = this.priceForSql(this.selected_priceRange);
 
       this.ADD_FILTER_DATA(this.Search);
+    },
+    priceForSql(price) {
+      switch (price) {
+        case "$0-$5":
+          return " between 0 and 5 ";
+        case "$5-$15":
+          return " between 5 and 15 ";
+        case "$15-$30":
+          return " between 15 and 30 ";
+        case "Above $30":
+          return " > 30 ";
+        default:
+          return "";
+      }
     }
   }
 };
