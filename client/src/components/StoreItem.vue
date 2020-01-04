@@ -1,6 +1,6 @@
 <template>
   <div id="StoreItem">
-    <b-card no-body style="max-height: 600px;">
+    <b-card no-body>
       <div class="book_div_image">
         <img class="book_image" :src="getLink(this.book.b_ISBN)" />
         <v-card-title class="justify-center">
@@ -10,14 +10,44 @@
         </v-card-title>
       </div>
       <b-card-body>
+        <b-card-title>{{ book.b_Name }}</b-card-title>
+        <b-card-sub-title class="mb-2">by {{ book.a_Name }}</b-card-sub-title>
         <div class="book_contain">
-          <b-card-title>{{ book.b_Name }}</b-card-title>
-          <b-card-sub-title class="mb-2">by {{ book.a_Name }}</b-card-sub-title>
           <b-card-text>
             <div>{{ book.b_description }}</div>
           </b-card-text>
         </div>
+        <div class="book_price">Price: ${{ this.book.Price }}</div>
       </b-card-body>
+      <div class="book_button_div">
+        <v-row>
+          <v-col class="d-flex" cols="12" sm="5" xsm="12">
+            <v-btn
+              tile
+              depressed
+              block
+              color="orange lighten-1
+"
+              class="white--text"
+              @click="dialog = false"
+              >Details</v-btn
+            >
+          </v-col>
+
+          <v-spacer></v-spacer>
+          <v-col class="d-flex" cols="12" sm="7" xsm="12">
+            <v-btn
+              depressed
+              tile
+              block
+              color="vueGreen"
+              class="mr-4 white--text"
+            >
+              Add to cart
+            </v-btn>
+          </v-col>
+        </v-row>
+      </div>
     </b-card>
   </div>
 </template>
@@ -34,8 +64,8 @@ export default {
     };
   },
   methods: {
- colorFunc(val){
-   switch (val) {
+    colorFunc(val) {
+      switch (val) {
         case "Hard-Cover":
           return "orange lighten-4";
         case "Paper-Back":
@@ -45,21 +75,9 @@ export default {
         default:
           return "";
       }
- },
-
+    },
 
     getLink(val) {
-      // axios
-      //   .get("https://www.googleapis.com/books/v1/volumes?q=isbn:" + val)
-      //   .then(response => {
-      //     let link = response.data.items[0].volumeInfo.imageLinks.thumbnail;
-      //     this.bookLink = link.replace("zoom=1", "zoom=2");
-      //   })
-      //   .catch(error => {
-      //     console.log(error);
-      //     console.log("fail");
-      //   });
-
       let temp = "http://covers.openlibrary.org/b/isbn/" + val + "-L.jpg";
       return temp;
     }
@@ -68,6 +86,16 @@ export default {
 </script>
 
 <style lang="scss">
+.book_button_div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 10px;
+}
+.book_price {
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
 .book_image {
   height: 100%;
   width: 100%;
@@ -77,18 +105,22 @@ export default {
   width: 150px;
   margin: 10% auto;
 
-  .v-chip:before{
+  .v-chip:before {
     background-color: inherit;
   }
 }
 
 #StoreItem {
+  // height: 700px;
+  .card-title {
+    margin-top: 15px;
+  }
   .h4,
   h4 {
     font-size: 1em;
   }
   .card {
-    height: 600px;
+    height: 670px;
   }
 }
 .book_contain {
@@ -99,6 +131,7 @@ export default {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 12px;
 
   p {
     font-size: 0.8em;
@@ -118,5 +151,19 @@ export default {
 }
 .StoreItem_container {
   justify-content: center;
+}
+@media screen and (min-width: 1000px) {
+  #StoreItem {
+    .card {
+      height: 610px;
+    }
+  }
+}
+@media screen and (min-width: 1400px) {
+  #StoreItem {
+    .card {
+      height: 590px;
+    }
+  }
 }
 </style>

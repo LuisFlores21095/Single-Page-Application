@@ -8,11 +8,7 @@ app.use(bodyParser.json());
 
 const db = require("./config/database")
 
-//   db.authenticate()
-//   .then(()=> console.log("Database connected..."))
-//   .catch(err=>console.log("Error: " + err))
 
-// app.get("/", (req, res)=> res.send("Index"));
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -20,26 +16,33 @@ app.use((req, res, next) => {
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
   if (req.method === 'OPTIONS') {
-      res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
-      return res.status(200).json({});
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
+    return res.status(200).json({});
   }
   next();
 });
 
-  app.use("/book", require("./routes/Book"));
+app.use("/book", require("./routes/Book"));
 
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: process.env.DATABASE_PW,
-//   database: "books"
-// });
 
 app.get("/", (req, res) => {
-  res.send("Book pi for project");
+  res.send("Testing home page");
 });
 
+app.use((req, res, next) => {
+  var err = new Error("File Not Found");
+  err.status = 404;
+  next(err);
+});
 
+app.use((err, req, res, next) => {
+  res.status(err.status || 400);
+
+  res.send({
+    message: err.message,
+    error: err
+  });
+});
 
 const PORT = process.env.PORT || 5000;
 

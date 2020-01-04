@@ -1,7 +1,6 @@
 <template>
-  <b-card id="StoreFilter" bg-variant="light">
+  <b-card id="StoreFilter" bg-variant="">
     <v-form>
-      <!-- <v-container> -->
       <v-row>
         <v-col cols="12" sm="6">
           <v-text-field
@@ -60,11 +59,10 @@
             block
             color="success"
             outlined
-            >Search</v-btn
-          >
+            >Search
+          </v-btn>
         </v-col>
       </v-row>
-      <!-- </v-container> -->
     </v-form>
   </b-card>
 </template>

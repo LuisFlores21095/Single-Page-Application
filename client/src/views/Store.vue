@@ -3,11 +3,10 @@
     <Header />
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <StoreBanner />
-    <StoreFilter/>
+    <StoreFilter />
     <Store />
     <Footer />
     <Login />
-
   </div>
 </template>
 
@@ -18,7 +17,7 @@ import Footer from "@/components/Footer.vue";
 import StoreBanner from "@/components/StoreBanner.vue";
 import Store from "@/components/Store.vue";
 import StoreFilter from "@/components/StoreFilter.vue";
-import Login from "@/components/Login.vue"
+import Login from "@/components/Login.vue";
 
 export default {
   name: "store",
@@ -34,10 +33,12 @@ export default {
 </script>
 
 <style lang="scss">
-#storeView{
-.card{
-  border: 1px solid rgba(32, 172, 69, 0.96);
-}
+#storeView {
+  background-color: #f7f7f7;
+
+  .card {
+    // border: 1px solid rgba(32, 172, 69, 0.96);
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.05);
+  }
 }
 </style>
-

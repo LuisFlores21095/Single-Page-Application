@@ -12,7 +12,9 @@
 <style lang="scss">
 #StoreBanner {
   height: 250px;
-  background-color: #f2f3f3;
+  background-color: #ffffff;
+        box-shadow: 0 0 4px 1px rgba(0,0,0,0.05);
+
   padding: 1rem 0;
 
   h3 {

@@ -28,7 +28,7 @@ app.use("/register", registerRoute);
 app.use("/login",loginRoute);
 
 app.get("/", (req, res) => {
-  res.send("we are on home");
+  res.send("Home page");
 });
 
 app.use((req, res, next) => {
