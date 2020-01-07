@@ -3,38 +3,38 @@
     <div id="FE">
       <p class="Main-text">{{ Frontend }}</p>
     </div>
-    <img class="main-imgs" id="M-1" src="../assets/IR.png" />
-    <img class="main-imgs" id="M-2" src="../assets/APS.png" />
-    <img class="main-imgs" id="M-3" src="../assets/CSS-grid.png" />
-    <img class="main-imgs" id="M-5" src="../assets/vue2.png" />
-    <img class="main-imgs" id="M-21" src="../assets/html-css.png" />
-    <img class="main-imgs" id="M-23" src="../assets/VueBoot.png" />
-    <img class="main-imgs" id="M-29" src="../assets/VaBaS.png" />
+    <img class="main-imgs" id="M-1" src="../../assets/IR.png" />
+    <img class="main-imgs" id="M-2" src="../../assets/APS.png" />
+    <img class="main-imgs" id="M-3" src="../../assets/CSS-grid.png" />
+    <img class="main-imgs" id="M-5" src="../../assets/vue2.png" />
+    <img class="main-imgs" id="M-21" src="../../assets/html-css.png" />
+    <img class="main-imgs" id="M-23" src="../../assets/VueBoot.png" />
+    <img class="main-imgs" id="M-29" src="../../assets/VaBaS.png" />
 
     <div id="BE">
       <p class="Main-text">{{ Backend }}</p>
     </div>
-    <img class="main-imgs" id="M-8" src="../assets/jsLogo.jpeg" />
-    <img class="main-imgs" id="M-27" src="../assets/MongoDB.jpg" />
-    <img class="main-imgs" id="M-25" src="../assets/SoapvJson2.jpeg" />
-    <img class="main-imgs" id="M-20" src="../assets/mevn.jpg" />
-    <img class="main-imgs" id="M-26" src="../assets/PHPSQL2.jpg" />
+    <img class="main-imgs" id="M-8" src="../../assets/jsLogo.jpeg" />
+    <img class="main-imgs" id="M-27" src="../../assets/MongoDB.jpg" />
+    <img class="main-imgs" id="M-25" src="../../assets/SoapvJson2.jpeg" />
+    <img class="main-imgs" id="M-20" src="../../assets/mevn.jpg" />
+    <img class="main-imgs" id="M-26" src="../../assets/PHPSQL2.jpg" />
 
     <div id="VG">
       <p class="Main-text">{{ VG }}</p>
     </div>
-    <img class="main-imgs" id="M-12" src="../assets/Unity.jpg" />
-    <img class="main-imgs" id="M-27" src="../assets/CharUnity.jpg" />
-    <img class="main-imgs" id="M-11" src="../assets/AWS.png" />
+    <img class="main-imgs" id="M-12" src="../../assets/Unity.jpg" />
+    <img class="main-imgs" id="M-27" src="../../assets/CharUnity.jpg" />
+    <img class="main-imgs" id="M-11" src="../../assets/AWS.png" />
 
     <div id="CS">
       <p class="Main-text">{{ CS }}</p>
     </div>
-    <img class="main-imgs" id="M-14" src="../assets/Treea.png" />
-    <img class="main-imgs" id="M-15" src="../assets/CsharpL.jpg" />
-    <img class="main-imgs" id="M-16" src="../assets/10101.jpg" />
-    <img class="main-imgs" id="M-17" src="../assets/Algo.jpg" />
-    <img class="main-imgs" id="M-28" src="../assets/ML.jpg" />
+    <img class="main-imgs" id="M-14" src="../../assets/Treea.png" />
+    <img class="main-imgs" id="M-15" src="../../assets/CsharpL.jpg" />
+    <img class="main-imgs" id="M-16" src="../../assets/10101.jpg" />
+    <img class="main-imgs" id="M-17" src="../../assets/Algo.jpg" />
+    <img class="main-imgs" id="M-28" src="../../assets/ML.jpg" />
   </div>
 </template>
 

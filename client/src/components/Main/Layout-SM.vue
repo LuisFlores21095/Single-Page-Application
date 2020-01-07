@@ -13,8 +13,8 @@
 <script>
 // @ is an alias to /src
 
-import SideNav from "@/components/SideNav.vue";
-import Gallery from "@/components/Gallery.vue";
+import SideNav from "@/components/Main/SideNav.vue";
+import Gallery from "@/components/Main/Gallery.vue";
 
 export default {
   name: "Layout-SM",

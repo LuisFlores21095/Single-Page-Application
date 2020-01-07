@@ -29,7 +29,7 @@
               color="orange lighten-1
 "
               class="white--text"
-              @click="dialog = false"
+              @click="$router.push('/store/book/' + book_id)"
               >Details</v-btn
             >
           </v-col>
@@ -60,10 +60,23 @@ export default {
   name: "StoreItem",
   data() {
     return {
-      bookLink: ""
+      bookLink: "",
+      book_id: this.book.b_ID
     };
   },
+  watch: {
+    book: function() {
+      this.setBookID();
+    }
+  },
+
   methods: {
+    setBookID() {
+      this.book_id = this.book.b_ID;
+    },
+    test() {
+      console.log(this.book_id);
+    },
     colorFunc(val) {
       switch (val) {
         case "Hard-Cover":

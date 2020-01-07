@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div id="store">
+  <div id="store">
+    <div id="store_container">
       <StoreItem
         v-for="(book, index) in bookByPage"
         :key="index"
@@ -21,37 +21,37 @@
 #pagination_div {
   margin-bottom: 15px;
 }
-#store {
+#store_container {
   margin: 0 25px 25px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
 }
 @media (min-width: 700px) {
-  #store {
+  #store_container  {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 1000px) {
-  #store {
+  #store_container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 1400px) {
-  #store {
+  #store_container  {
     grid-template-columns: repeat(5, 1fr);
   }
 }
 @media (min-width: 1400px) {
-  #store {
+  #store_container  {
     max-width: 1400px;
     margin: 0 auto 25px;
   }
 }
 </style>
 <script>
-import StoreItem from "@/components/StoreItem.vue";
+import StoreItem from "@/components/Store/StoreItem.vue";
 import { mapState } from "vuex";
 import axios from "axios";
 

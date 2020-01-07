@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="nav-logo">
-      <img id="header-logo" alt="logo" src="../assets/logo.png" />
+      <img id="header-logo" alt="logo" src="../../assets/logo.png" />
     </div>
     <div class="H-nav-tabs">
       <ul id="Links">
@@ -9,13 +9,13 @@
           <router-link to="/">Home</router-link>
         </li>
         <li>
-          <router-link to="/Store">Store</router-link>
+          <router-link to="/store">Store</router-link>
         </li>
         <li>
-          <router-link to="/Contact">Contact</router-link>
+          <router-link to="/contact">Contact</router-link>
         </li>
         <li>
-          <router-link to="/About">About</router-link>
+          <router-link to="/about">About</router-link>
         </li>
       </ul>
     </div>

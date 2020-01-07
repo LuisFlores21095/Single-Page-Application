@@ -37,7 +37,6 @@ router.post("/", (req, res, next) => {
     let temp = [Category, AuthorName, BookName].filter(Boolean).join(" and ");
     where = "where " + temp;
   }
-  console.log(where);
 
   if (req.body.coverType || req.body.price) {
     if (req.body.coverType & !req.body.price) {

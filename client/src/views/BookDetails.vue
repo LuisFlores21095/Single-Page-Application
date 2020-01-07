@@ -1,12 +1,9 @@
 <template>
-  <div id="storeView">
+  <div id="BookDetails">
     <Header />
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <StoreBanner />
-    <StoreFilter />
-    <Store />
+    <StoreBookDisplay/>
+    <StoreBookPurchase/>
     <Footer />
-    <Login />
   </div>
 </template>
 
@@ -14,20 +11,16 @@
 // @ is an alias to /src
 import Header from "@/components/General/Header.vue";
 import Footer from "@/components/General/Footer.vue";
-import StoreBanner from "@/components/Store/StoreBanner.vue";
-import Store from "@/components/Store/Store.vue";
-import StoreFilter from "@/components/Store/StoreFilter.vue";
-import Login from "@/components/General/Login.vue";
+import StoreBookDisplay from "@/components/Store/StoreBookDisplay.vue";
+import StoreBookPurchase from "@/components/Store/StoreBookPurchase.vue";
 
 export default {
   name: "store",
   components: {
     Header,
     Footer,
-    StoreBanner,
-    Store,
-    StoreFilter,
-    Login
+    StoreBookDisplay,
+    StoreBookPurchase
   }
 };
 </script>

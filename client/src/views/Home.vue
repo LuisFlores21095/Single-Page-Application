@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="homeView">
     <Header/>
     <LayoutSM/>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
@@ -9,9 +9,9 @@
 
 <script>
 // @ is an alias to /src
-import Header from '@/components/Header.vue'
-import LayoutSM from '@/components/Layout-SM.vue'
-import Footer from '@/components/Footer.vue'
+import Header from '@/components/General/Header.vue'
+import LayoutSM from '@/components/Main/Layout-SM.vue'
+import Footer from '@/components/General/Footer.vue'
 
 
 
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-#home{
+#homeView{
   background-color: #f7f7f7;
 }
 </style>

@@ -3,7 +3,7 @@
     <v-card class="flex" flat tile>
       <v-card-title class="secondary">
         <div class="subheading"
-          >Get connected with us on social networks!</div
+          >Get connected with me on social networks!</div
         >
 
         <v-spacer></v-spacer>

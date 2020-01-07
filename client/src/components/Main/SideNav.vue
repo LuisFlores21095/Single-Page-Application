@@ -1,7 +1,7 @@
 <template>
   <div id="Side">
     <div id="profile">
-      <img id="myPhoto" alt="Luis Flores" src="../assets/person.png" />
+      <img id="myPhoto" alt="Luis Flores" src="../../assets/person.png" />
       <h3 id="side-header">
         <i id="profile_name" >{{ name }}</i>
       </h3>

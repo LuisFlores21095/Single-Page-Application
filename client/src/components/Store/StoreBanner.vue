@@ -1,6 +1,6 @@
 <template>
   <div id="StoreBanner">
-    <img id="vueStoreImg" alt="logo" src="../assets/VUE_Store.png" />
+    <img id="vueStoreImg" alt="logo" src="../../assets/VUE_Store.png" />
     <h3>Vue Shopping Cart</h3>
     <p>
       Created using Vue.js, Vuetify, Node.js (Only a mock store, and can't be
@@ -13,7 +13,7 @@
 #StoreBanner {
   height: 250px;
   background-color: #ffffff;
-        box-shadow: 0 0 4px 1px rgba(0,0,0,0.05);
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.05);
 
   padding: 1rem 0;
 
