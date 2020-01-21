@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 const db = require("./config/database")
 
 
+
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(

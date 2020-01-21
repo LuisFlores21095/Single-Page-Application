@@ -2,7 +2,21 @@ const express = require("express");
 const router = express.Router();
 const db = require("../config/database");
 
-router.get("/", (req, res) => {
+router.get("/:isbn", (req, res, next)=>{
+
+  sql = "select * from book_api_db where b_ISBN = " + req.params.isbn +";"
+
+  db.query(sql, function(err, result) {
+    if (err){
+      return next(err);
+    }
+
+    res.send(result);
+  });
+
+})
+
+router.get("/", (req, res, next) => {
   let sql =
     "select o.* from book_api_db as o Inner Join (Select min(Price) as min, b_ISBN From book_api_db group by b_ISBN) as n on o.b_ISBN = n.b_ISBN and  o.Price = n.min";
 

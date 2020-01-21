@@ -29,7 +29,7 @@
               color="orange lighten-1
 "
               class="white--text"
-              @click="$router.push('/store/book/' + book_id)"
+              @click="$router.push('/store/book/' + book_isbn)"
               >Details</v-btn
             >
           </v-col>
@@ -61,7 +61,7 @@ export default {
   data() {
     return {
       bookLink: "",
-      book_id: this.book.b_ID
+      book_isbn: this.book.b_ISBN
     };
   },
   watch: {
@@ -72,10 +72,7 @@ export default {
 
   methods: {
     setBookID() {
-      this.book_id = this.book.b_ID;
-    },
-    test() {
-      console.log(this.book_id);
+      this.book_ISBN = this.book.b_ISBN;
     },
     colorFunc(val) {
       switch (val) {

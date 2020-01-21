@@ -1,38 +1,54 @@
 <template>
   <div id="StoreBookPurchase">
+    <div class="BookDisplay_div_image">
+      <img
+        class="BookDisplay_image"
+        src="http://covers.openlibrary.org/b/isbn/9780385533225-L.jpg"
+      />
+    </div>
     <div class="SBP_Types">
-      <div v-for="(item, index) in bookInfo" :key="index"
-        @click="activeBtn = 'btn'+index"
-        :class="{ fee: activeBtn === 'btn' +index }"
-        style="height: 100px;"
+      <div
+        v-for="(item, index) in bookInfo"
+        :key="index"
+        @click="activeBtn = 'btn' + index"
+        :class="{ fee: activeBtn === 'btn' + index }"
+        style="height: 70px;"
       >
         <v-btn
           style="height: 100%;"
           block
-          :color="activeBtn === 'btn'+index ? 'blue lighten-4' : ''"
-          >{{item.price}} <br /><br />{{item.bookType}}</v-btn
+          :color="activeBtn === 'btn' + index ? 'green lighten-5' : ''"
+          >{{ item.price }} <br /><br />{{ item.bookType }}</v-btn
         >
       </div>
-      
-    </div>
-      <b-card class="text-center" style="margin: 10px 25px;">
-           <div class="SBP_text">
-      <strong> Book:</strong> The Thing
-    </div>
-    <div class="SBP_text">
-     <strong> Listed Price:</strong> $5:99 
     </div>
 
     <div class="text-center">
-
-    <v-btn  style="width: 600px;" color="primary"  large>Add to Cart</v-btn>
-  </div>
-  </b-card>
+      <v-btn class="white--text" block color="vueGreen" large
+        >Add to Cart</v-btn
+      >
+    </div>
   </div>
 </template>
 
 <style lang="scss">
-.SBP_text{
+.text-center {
+  margin: 0 25px 25px;
+}
+.BookDisplay_div_image {
+  height: 300px;
+  width: 220px;
+  margin: 0 auto 30px;
+
+  .v-chip:before {
+    background-color: inherit;
+  }
+}
+.BookDisplay_image {
+  height: 100%;
+  width: 100%;
+}
+.SBP_text {
   font-size: 26px;
   margin: 20px 0;
 }
@@ -45,7 +61,7 @@
 }
 .fee {
   border-style: solid;
-  border-color: rgb(20, 20, 187);
+  border-color: #41b883;
   border-width: 3px;
   border-radius: 7px;
 }
@@ -61,7 +77,6 @@ export default {
         { price: 3.99, bookType: "book" },
         { price: 5.99, bookType: "ssss" },
         { price: 4.99, bookType: "dddd" }
-        
       ]
     };
   }

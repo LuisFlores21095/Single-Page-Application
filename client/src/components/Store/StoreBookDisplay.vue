@@ -1,44 +1,35 @@
 <template>
   <div id="StoreBookDisplay">
-    <div class="BookDisplay_div_image">
-      <img
-        class="BookDisplay_image"
-        src="http://covers.openlibrary.org/b/isbn/9780385533225-L.jpg"
-      />
-    </div>
-    <b-card-body>
-      <b-card-title style="padding-left: 10px;"
-        ><strong>Book Details</strong></b-card-title
-      >
+    <div>
+      <div style="padding-left: 10px; font-size: 1.2em; ">Book Details</div>
       <table cellspacing="0" class="table" style="max-height: 28px;">
         <tbody>
           <tr>
             <th>Book Name:</th>
             <td>
-              The Thing
+              {{ bookInfo.b_Name }}
             </td>
           </tr>
           <tr>
             <th>Author:</th>
             <td>
-              John smith
+              {{ bookInfo.a_Name}}
             </td>
           </tr>
           <tr>
             <th>Description:</th>
             <td>
-              dfasdfasd fa sdf asdfasdfasdf asdfasdfasdfasfa sdfasdfasdfasd asdf
-            </td>
+{{bookInfo.b_description}}            </td>
           </tr>
           <tr>
             <th>Category:</th>
             <td>
-              Horror
+              {{bookInfo.c_Name}}
             </td>
           </tr>
         </tbody>
       </table>
-    </b-card-body>
+    </div>
   </div>
 </template>
 
@@ -53,30 +44,16 @@
     padding-right: 10px;
   }
 }
-
-.BookDisplay_div_image {
-  height: 250px;
-  width: 190px;
-  margin: 5% auto;
-
-  .v-chip:before {
-    background-color: inherit;
-  }
-}
-.BookDisplay_image {
-  height: 100%;
-  width: 100%;
-}
 </style>
 
 <script>
 export default {
+  props: ["bookInfo"],
   name: "StoreBookDisplay",
   data() {
     return {
-      bookInfo: null,
-      activeBtn: 0
 
+      activeBtn: 0
     };
   }
 };
